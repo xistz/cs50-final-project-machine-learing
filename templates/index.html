@@ -13,11 +13,16 @@
     </head>
 
     <body>
-        <h1>{{ headline }}</h1>
-        <p>{{ description }}</p>
-        <form id="picture" action="{{ url_for('upload') }}"method="post" enctype="multipart/form-data">
+        <h1>Image Classifier web application</h1>
+        {% if show_picture %}
+            <h2>{{ name }}</h2>
+            <img src="{{ picture }}" alt="Uploaded picture of flower">
+            <p>{{ description }}</p>
+        {% endif %}
+        <p>{{ instruction }}</p>
+        <form id="picture" action="/upload" method="post" enctype="multipart/form-data">
             <input type="file" name="file" accept=".jpg"/>
-            <input type="submit" name="upload"/>
+            <input type="submit" value="Upload"/>
         </form>
 
 
