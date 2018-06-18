@@ -20,8 +20,8 @@
             <p>{{ description }}</p>
         {% endif %}
         <p>{{ instruction }}</p>
-        <form id="picture" action="/upload" method="post" enctype="multipart/form-data">
-            <input type="file" name="file" accept=".jpg"/>
+        <form id="picture" action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".jpg" required/>
             <input type="submit" value="Upload"/>
         </form>
 
